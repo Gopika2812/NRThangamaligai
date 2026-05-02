@@ -549,10 +549,19 @@ section {
 ───────────────────────────────────────────── */
 .chart-container {
   width: 100%;
+  max-width: 100%;
   min-height: 300px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Ensure Chart.js canvas never exceeds parent */
+.chart-container canvas {
+  max-width: 100% !important;
+  height: auto !important;
 }
 .highlight-box {
   margin-top: 28px;
@@ -918,6 +927,37 @@ tr:last-child td { border-bottom: none; }
     padding-left: 0;
     margin-top: 30px;
   }
+
+  /* Charts — full-width, no overflow on Android */
+  .chart-container {
+    padding: 0;
+    min-height: 260px;
+    overflow: hidden;
+  }
+
+  .chart-container canvas {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Glass card padding tighter on mobile so chart has room */
+  .glass-card.chart-container {
+    padding: 16px 10px;
+  }
+
+  /* Profile image margin top on mobile */
+  .md-profile-card {
+    margin-top: 20px;
+  }
+
+  /* Alloc grid full width on mobile */
+  .alloc-grid {
+    width: 100%;
+  }
+
+  .alloc-card {
+    padding: 14px 16px;
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -929,4 +969,17 @@ tr:last-child td { border-bottom: none; }
   .section-header h2 { font-size: 1.7rem; }
   .highlight-amount { font-size: 2rem; }
   .alloc-card { flex-direction: column; align-items: flex-start; gap: 6px; }
+
+  /* Very small screens — reduce section padding */
+  section { padding: 60px 5%; }
+
+  /* Charts on very small android screens */
+  .chart-container {
+    min-height: 220px;
+    padding: 0;
+  }
+
+  .glass-card {
+    padding: 16px;
+  }
 }

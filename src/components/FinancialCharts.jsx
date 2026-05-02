@@ -4,18 +4,22 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  BarController,
+  LineController,
   Title,
   Tooltip,
   Legend,
   PointElement,
   LineElement,
 } from 'chart.js';
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  BarController,
+  LineController,
   PointElement,
   LineElement,
   Title,
@@ -26,25 +30,26 @@ ChartJS.register(
 export const GrowthChart = () => {
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
-        labels: { color: '#1a1a1a' }
+        labels: { color: '#1a1a1a', font: { size: 11 } }
       },
       title: {
         display: true,
         text: 'Projected Turnover & PAT Growth (₹ Cr)',
         color: '#FF6B00',
-        font: { size: 18, family: 'Outfit' }
+        font: { size: 14, family: 'Outfit' }
       },
     },
     scales: {
       y: {
-        ticks: { color: '#555555' },
+        ticks: { color: '#555555', font: { size: 10 } },
         grid: { color: 'rgba(0, 0, 0, 0.05)' }
       },
       x: {
-        ticks: { color: '#555555' },
+        ticks: { color: '#555555', font: { size: 10 } },
         grid: { display: false }
       }
     }
@@ -74,22 +79,27 @@ export const GrowthChart = () => {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div style={{ width: '100%', height: '280px', position: 'relative' }}>
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
 
 export const UseOfFundsChart = () => {
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'bottom',
-        labels: { color: '#1a1a1a' }
+        labels: { color: '#1a1a1a', font: { size: 11 } }
       },
       title: {
         display: true,
         text: 'Strategic Capital Allocation',
         color: '#FF6B00',
-        font: { size: 18, family: 'Outfit' }
+        font: { size: 14, family: 'Outfit' }
       },
     },
   };
@@ -112,5 +122,9 @@ export const UseOfFundsChart = () => {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div style={{ width: '100%', height: '280px', position: 'relative' }}>
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
