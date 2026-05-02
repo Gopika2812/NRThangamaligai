@@ -667,6 +667,7 @@ th {
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  white-space: nowrap; /* prevent header text from wrapping */
 }
 
 tr:last-child td { border-bottom: none; }
@@ -973,10 +974,22 @@ tr:last-child td { border-bottom: none; }
   /* Very small screens — reduce section padding */
   section { padding: 60px 5%; }
 
-  /* Charts on very small android screens */
-  .chart-container {
-    min-height: 220px;
-    padding: 0;
+  /* Chart card — no padding so chart fills full width */
+  .glass-card.chart-container {
+    padding: 10px 0;
+  }
+
+  /* Chart scroll wrapper on small android screens */
+  .chart-scroll-mobile {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  /* Table tighter padding on small screens */
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.78rem;
   }
 
   .glass-card {
