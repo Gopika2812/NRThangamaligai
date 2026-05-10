@@ -75,14 +75,14 @@ section {
 
 .md-image-wrap {
   position: relative;
-  width: 280px;
-  height: 350px;
+  width: 350px;
+  height: 450px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   border: 8px solid #fff;
   margin-bottom: 24px;
-  background: var(--accent);
+  background: #fff;
 }
 
 .md-image-wrap img {
@@ -387,14 +387,14 @@ section {
 
 .hero-profile-container {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   margin-bottom: 50px;
   border-radius: 50%;
   overflow: hidden;
   border: 8px solid #fff;
   box-shadow: var(--shadow-soft);
-  background: #1a1a1a;
+  background: #fff;
 }
 
 .hero-profile-img {
@@ -819,7 +819,7 @@ tr:last-child td { border-bottom: none; }
   .navbar { padding: 16px 6%; }
   .hero-modern { padding: 120px 6% 70px; }
   .hero-modern h1 { font-size: 3.8rem; }
-  .hero-profile-container { width: 260px; height: 260px; }
+  .hero-profile-container { width: 280px; height: 280px; }
   .section-header h2 { font-size: 2.2rem; }
 }
 
