@@ -56,11 +56,6 @@ const App = () => {
         {/* Desktop links */}
         <div className="nav-links desktop-nav">
           {navLinks.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
-          <a
-            href="https://wa.me/916380615080?text=Hello%2C%20I%20am%20interested%20in%20the%20N.R.%20Thanga%20Maaligai%20Strategic%20Investment%20Portfolio."
-            target="_blank" rel="noopener noreferrer"
-            className="btn-primary-modern nav-cta"
-          >Contact Us</a>
         </div>
 
         {/* Hamburger button (mobile only) */}
@@ -83,12 +78,6 @@ const App = () => {
               {navLinks.map(l => (
                 <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
               ))}
-              <a
-                href="https://wa.me/916380615080?text=Hello%2C%20I%20am%20interested%20in%20the%20N.R.%20Thanga%20Maaligai%20Strategic%20Investment%20Portfolio."
-                target="_blank" rel="noopener noreferrer"
-                className="btn-primary-modern"
-                onClick={() => setMenuOpen(false)}
-              >Contact Us</a>
             </div>
           </motion.div>
         )}
@@ -110,7 +99,7 @@ const App = () => {
           </div>
 
           <div className="hero-profile-container">
-            <img src="/profile_clean.png" alt="Promoter" className="hero-profile-img" />
+            <img src="/profile2_clean.png" alt="Promoter" className="hero-profile-img" />
           </div>
 
           <div className="hero-text-container">
@@ -120,17 +109,7 @@ const App = () => {
               Strategizing the ₹100 Crore expansion of N.R. Thanga Maaligai<br className="desktop-br" />
               into an institutional-grade jewellery powerhouse.
             </p>
-            <div className="hero-btns-modern">
-              <a
-                href="https://wa.me/916380615080?text=Hello%2C%20I%20am%20interested%20in%20the%20N.R.%20Thanga%20Maaligai%20Strategic%20Investment%20Portfolio.%20Please%20invite%20me%20for%20a%20detailed%20discussion."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary-modern"
-              >
-                Invite Me
-              </a>
             </div>
-          </div>
         </motion.div>
       </section>
 
@@ -163,7 +142,7 @@ const App = () => {
         <div className="grid grid-2 align-center">
           <div className="md-profile-card">
             <div className="md-image-wrap">
-              <img src="/profile.jpeg" alt="R.N.K. RAJAN" />
+              <img src="/profile2_clean.png" alt="R.N.K. RAJAN" />
               <div className="md-badge">Managing Director</div>
             </div>
             <div className="md-info">
@@ -440,16 +419,6 @@ const App = () => {
         >
           <h2 style={{ color: '#fff' }}>Join the Expansion</h2>
           <div className="title-underline" style={{ background: 'var(--primary)', margin: '10px auto 30px' }}></div>
-          <div className="hero-btns-modern footer-btns" style={{ justifyContent: 'center' }}>
-            <a
-              href="https://wa.me/916380615080?text=Hello%2C%20I%20am%20interested%20in%20N.R.%20Thanga%20Maaligai.%20I%20would%20like%20to%20Join%20with%20you.%20Please%20share%20more%20details."
-              target="_blank" rel="noopener noreferrer"
-              className="btn-primary-modern"
-              style={{ textDecoration: 'none' }}
-            >
-              Join With Us
-            </a>
-          </div>
           <p>© 2024 N.R. Thanga Maaligai. All rights reserved.</p>
         </motion.div>
       </section>
