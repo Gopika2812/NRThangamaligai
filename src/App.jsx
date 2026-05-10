@@ -41,8 +41,8 @@ const App = () => {
 
   const navLinks = [
     { href: '#summary', label: 'Summary' },
-    { href: '#status',  label: 'Brand'   },
-    { href: '#plan',    label: 'Plan'    },
+    { href: '#status', label: 'Brand' },
+    { href: '#plan', label: 'Plan' },
     { href: '#financials', label: 'Growth' },
   ];
 
@@ -109,7 +109,7 @@ const App = () => {
               Strategizing the ₹100 Crore expansion of N.R. Thanga Maaligai<br className="desktop-br" />
               into an institutional-grade jewellery powerhouse.
             </p>
-            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -142,7 +142,7 @@ const App = () => {
         <div className="grid grid-2 align-center">
           <div className="md-profile-card">
             <div className="md-image-wrap">
-              <img src="/profile2_clean.png" alt="R.N.K. RAJAN" />
+              <img src="/prof3.png" alt="R.N.K. RAJAN" />
               <div className="md-badge">Managing Director</div>
             </div>
             <div className="md-info">
@@ -223,23 +223,29 @@ const App = () => {
         <div className="grid grid-2 align-center">
           <div className="timeline" style={{ margin: '0', maxWidth: '100%' }}>
             {[
-              { 
-                year: "1942", 
-                title: "The Foundation", 
+              {
+                year: "1942",
+                title: "The Foundation",
                 desc: "Started as a premier gold jewellery destination, building a legacy of purity and ethics.",
                 icon: <History size={16} />
               },
-              { 
-                year: "1980", 
-                title: "Generational Trust", 
+              {
+                year: "1980",
+                title: "Generational Trust",
                 desc: "Expanded operations and became a household name in Tiruchirappalli and beyond.",
                 icon: <Award size={16} />
               },
-              { 
-                year: "2024", 
-                title: "Institutional Shift", 
+              {
+                year: "2024",
+                title: "Institutional Shift",
                 desc: "Initiating corporatization to scale our proven model across new high-growth markets.",
                 icon: <TrendingUp size={16} />
+              },
+              {
+                year: "2026",
+                title: "Strategic Expansion",
+                desc: "Expecting ₹100 Crores of strategic investment to fuel pan-India retail footprint.",
+                icon: <Coins size={16} />
               }
             ].map((item, i) => (
               <motion.div
@@ -266,9 +272,10 @@ const App = () => {
             {[
               { year: "1942", src: "/assets/milestones/1942.png", label: "Heritage Storefront" },
               { year: "1980", src: "/assets/milestones/1980.png", label: "Golden Era Showroom" },
-              { year: "2024", src: "/assets/milestones/2024.png", label: "Modern Corporatized Vision" }
+              { year: "2024", src: "/assets/milestones/2024.png", label: "Modern Corporatized Vision" },
+              { year: "2026", src: "/assets/milestones/2026.png", label: "Future Flagship Showroom" }
             ].map((img, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -329,7 +336,7 @@ const App = () => {
                     <td>₹23.24 Cr</td>
                   </tr>
                   <tr style={{ background: 'var(--accent)' }}>
-                    <td>FY 2028-29</td>
+                    <td>FY 2026-27</td>
                     <td>₹210.50 Cr</td>
                     <td>₹36.12 Cr</td>
                   </tr>
@@ -349,9 +356,9 @@ const App = () => {
           <div className="alloc-grid">
             {[
               { title: "Inventory Acquisition", val: "65%", icon: <Coins /> },
-              { title: "Store Expansion",       val: "20%", icon: <MapPin /> },
-              { title: "Tech & Marketing",      val: "10%", icon: <Zap /> },
-              { title: "Working Capital",       val: "5%",  icon: <ShieldCheck /> }
+              { title: "Store Expansion", val: "20%", icon: <MapPin /> },
+              { title: "Tech & Marketing", val: "10%", icon: <Zap /> },
+              { title: "Working Capital", val: "5%", icon: <ShieldCheck /> }
             ].map((item, i) => (
               <div key={i} className="alloc-card glass-card">
                 <div className="alloc-left">
@@ -369,9 +376,9 @@ const App = () => {
       <Section title="Restructuring & Scalability Roadmap">
         <div className="grid grid-3">
           {[
-            { step: "01", title: "Capital Infusion",   desc: "Investment for inventory and showroom expansion." },
-            { step: "02", title: "Corporatization",    desc: "Transition to a Private Limited Company structure." },
-            { step: "03", title: "Asset Transfer",     desc: "Legal transfer of brand goodwill and operational assets." }
+            { step: "01", title: "Capital Infusion", desc: "Investment for inventory and showroom expansion." },
+            { step: "02", title: "Corporatization", desc: "Transition to a Private Limited Company structure." },
+            { step: "03", title: "Asset Transfer", desc: "Legal transfer of brand goodwill and operational assets." }
           ].map((item, i) => (
             <div key={i} className={`process-step ${i === 1 ? 'highlight' : ''}`}>
               <div className="step-num">{item.step}</div>
@@ -419,7 +426,7 @@ const App = () => {
         >
           <h2 style={{ color: '#fff' }}>Join the Expansion</h2>
           <div className="title-underline" style={{ background: 'var(--primary)', margin: '10px auto 30px' }}></div>
-          <p>© 2024 N.R. Thanga Maaligai. All rights reserved.</p>
+          <p>© 2026 N.R. Thanga Maaligai. All rights reserved.</p>
         </motion.div>
       </section>
 
