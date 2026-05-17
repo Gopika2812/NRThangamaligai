@@ -14,7 +14,10 @@ import {
   Award,
   Users,
   Gem,
-  History
+  History,
+  Phone,
+  Mail,
+  Globe
 } from 'lucide-react';
 import { GrowthChart, UseOfFundsChart } from './components/FinancialCharts';
 
@@ -424,9 +427,28 @@ const App = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 style={{ color: '#fff' }}>Join the Expansion</h2>
-          <div className="title-underline" style={{ background: 'var(--primary)', margin: '10px auto 30px' }}></div>
-          <p>© 2026 N.R. Thanga Maaligai. All rights reserved.</p>
+          <h2 style={{ color: '#fff', fontSize: '2.2rem', lineHeight: '1.4', fontStyle: 'italic' }}>
+            "Partner with a Heritage of Trust. <br /> Grow with N.R. Thanga Maaligai."
+          </h2>
+          <div className="title-underline" style={{ background: 'var(--gold)', margin: '20px auto 40px' }}></div>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center', marginBottom: '40px', fontSize: '1.1rem', fontWeight: '500' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', textAlign: 'center', margin: 0, color: '#ffffff' }}>
+              <MapPin size={22} color="var(--gold)" style={{ flexShrink: 0 }} />
+              No.37 & 38, Clives Building, Nandhi Kovil street, Teppakulam, Trichy - 620 002.
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', margin: 0, color: '#ffffff' }}>
+              <Phone size={22} color="var(--gold)" style={{ flexShrink: 0 }} /> 
+              Ph: 0431-2700290, 4011916 &nbsp;|&nbsp; Mob: 99527 80575, 70108 88203 &nbsp;|&nbsp; WA: 80566 18807
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap', justifyContent: 'center', margin: 0, color: '#ffffff' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Mail size={22} color="var(--gold)" /> nrtgold@gmail.com</span>
+              <span style={{ opacity: 0.5, color: '#ffffff' }}>|</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Globe size={22} color="var(--gold)" /> www.nrtjewellery.in</span>
+            </div>
+          </div>
+
+          <p style={{ fontSize: '0.9rem', opacity: 0.8, color: '#ffffff', margin: 0 }}>© 2026 N.R. Thanga Maaligai. All rights reserved.</p>
         </motion.div>
       </section>
 
