@@ -28,6 +28,7 @@ const Section = ({ title, children, id, className = "" }) => (
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5 }}
+      className="section-frame"
     >
       <div className="section-header">
         <h2>{title}</h2>
@@ -88,12 +89,11 @@ const App = () => {
 
       {/* ── Hero ── */}
       <section className="hero-modern">
-        <div className="hero-circle-bg"></div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="hero-modern-content"
+          className="hero-modern-content section-frame"
         >
           {/* Badges row (visible on mobile above image) */}
           <div className="hero-badges-row">
@@ -102,7 +102,7 @@ const App = () => {
           </div>
 
           <div className="hero-profile-container">
-            <img src="/profile2_clean.png" alt="Promoter" className="hero-profile-img" />
+            <img src="/prof.png" alt="Promoter" className="hero-profile-img" />
           </div>
 
           <div className="hero-text-container">
@@ -223,74 +223,61 @@ const App = () => {
 
       {/* ── Brand Journey ── */}
       <Section title="Our Brand Journey" id="status" className="bg-alt">
-        <div className="grid grid-2 align-center">
-          <div className="timeline" style={{ margin: '0', maxWidth: '100%' }}>
-            {[
-              {
-                year: "1942",
-                title: "The Foundation",
-                desc: "Started as a premier gold jewellery destination, building a legacy of purity and ethics.",
-                icon: <History size={16} />
-              },
-              {
-                year: "1980",
-                title: "Generational Trust",
-                desc: "Expanded operations and became a household name in Tiruchirappalli and beyond.",
-                icon: <Award size={16} />
-              },
-              {
-                year: "2024",
-                title: "Institutional Shift",
-                desc: "Initiating corporatization to scale our proven model across new high-growth markets.",
-                icon: <TrendingUp size={16} />
-              },
-              {
-                year: "2026",
-                title: "Strategic Expansion",
-                desc: "Expecting ₹100 Crores of strategic investment to fuel pan-India retail footprint.",
-                icon: <Coins size={16} />
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.2 }}
-                viewport={{ once: true }}
-                className="timeline-item"
-              >
-                <div className="timeline-dot">
-                  {item.icon}
+        <div className="horizontal-timeline">
+          {[
+            {
+              year: "1942",
+              title: "The Foundation",
+              desc: "Started as a premier gold jewellery destination, building a legacy of purity and ethics.",
+              src: "/1942.png",
+              icon: <History size={20} />
+            },
+            {
+              year: "1980",
+              title: "Generational Trust",
+              desc: "Expanded operations and became a household name in Tiruchirappalli and beyond.",
+              src: "/1980.png",
+              icon: <Award size={20} />
+            },
+            {
+              year: "2024",
+              title: "Institutional Shift",
+              desc: "Initiating corporatization to scale our proven model across new high-growth markets.",
+              src: "/2024.png",
+              icon: <TrendingUp size={20} />
+            },
+            {
+              year: "2026",
+              title: "Strategic Expansion",
+              desc: "Expecting ₹100 Crores of strategic investment to fuel pan-India retail footprint.",
+              src: "/2026.png",
+              icon: <Coins size={20} />
+            }
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              viewport={{ once: true }}
+              className={`timeline-row ${idx % 2 === 1 ? 'row-reverse' : ''}`}
+            >
+              {/* Text content card */}
+              <div className="timeline-card-content">
+                <div className="timeline-header-row">
+                  <div className="timeline-badge-icon">{item.icon}</div>
+                  <span className="timeline-card-year">{item.year}</span>
                 </div>
-                <div className="timeline-content">
-                  <span className="timeline-year">{item.year}</span>
-                  <h3>{item.title}</h3>
-                  <p className="lead-text" style={{ fontSize: '1rem' }}>{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
 
-          <div className="milestone-gallery">
-            {[
-              { year: "1942", src: "/assets/milestones/1942.png", label: "Heritage Storefront" },
-              { year: "1980", src: "/assets/milestones/1980.png", label: "Golden Era Showroom" },
-              { year: "2024", src: "/assets/milestones/2024.png", label: "Modern Corporatized Vision" },
-              { year: "2026", src: "/assets/milestones/2026.png", label: "Future Flagship Showroom" }
-            ].map((img, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + idx * 0.2 }}
-                viewport={{ once: true }}
-                className="milestone-photo-card"
-              >
-                <div className="photo-label">{img.year}: {img.label}</div>
-                <img src={img.src} alt={`${img.year} milestone`} />
-              </motion.div>
-            ))}
-          </div>
+              {/* Image card */}
+              <div className="timeline-card-image">
+                <img src={item.src} alt={`${item.year} milestone`} />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </Section>
 
@@ -426,6 +413,7 @@ const App = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="footer-frame"
         >
           <h2 style={{ color: '#fff', fontSize: '2.2rem', lineHeight: '1.4', fontStyle: 'italic' }}>
             "Partner with a Heritage of Trust. <br /> Grow with N.R. Thanga Maaligai."
